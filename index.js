@@ -10,20 +10,20 @@ const bot = new Telegraf(BOT_TOKEN);
 
 const getTodayDate = () => new Date().toLocaleDateString('hi-IN', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
-// --- फोटो के डायरेक्ट लिंक यहाँ डालें ---
+// --- सतीश भाई, यहाँ अपने फोटो लिंक डालें (PostImages.org से) ---
 const IMG_FOLLOW_DAY = "https://i.postimg.cc/example/day.jpg"; 
 const IMG_FOLLOW_NIGHT = "https://i.postimg.cc/example/night.jpg";
 
 const games = {
     "FIX_GAME_LIST": `
-🔥 **TODAY VIP GAME** 🔥
+🔥 TODAY VIP GAME 🔥
 📅 DATE: ${getTodayDate()}
 ━━━━━━━━━━━━━━━━━━━━
 
-💠 **TIME BAZAR** 💠
-🏆 FIX ANK ➔ 👑 [ 1 ]
-⭐ STRONG ➔ 🌟 [ 6 ]
-📍 SUPPORT ➔ 🚩 [ 4, 9 ]
+💠 TIME BAZAR 💠
+🏆 FIX ANK ➔ [ 1 ]
+⭐ STRONG ➔ [ 6 ]
+📍 SUPPORT ➔ [ 4, 9 ]
 ━━━━━━━━━━━━━━━━━━━━
 📊 MASTER BOARD 📊
 💠 1 | 14, 19, 16, 11 | 128, 470, 100, 146
@@ -33,10 +33,10 @@ const games = {
 
 ━━━━━━━━━━━━━━━━━━━━
 
-💠 **MILAN DAY** 💠
-🏆 FIX ANK ➔ 👑 [ 4 ]
-⭐ STRONG ➔ 🌟 [ 9 ]
-📍 SUPPORT ➔ 🚩 [ 0, 5 ]
+💠 MILAN DAY 💠
+🏆 FIX ANK ➔ [ 4 ]
+⭐ STRONG ➔ [ 9 ]
+📍 SUPPORT ➔ [ 0, 5 ]
 ━━━━━━━━━━━━━━━━━━━━
 📊 MASTER BOARD 📊
 💠 4 | 40, 45, 49, 44 | 130, 158, 400, 220
@@ -46,10 +46,10 @@ const games = {
 
 ━━━━━━━━━━━━━━━━━━━━
 
-💠 **KALYAN** 💠
-🏆 FIX ANK ➔ 👑 [ 1 ]
-⭐ STRONG ➔ 🌟 [ 6 ]
-📍 SUPPORT ➔ 🚩 [ 4, 9 ]
+💠 KALYAN 💠
+🏆 FIX ANK ➔ [ 1 ]
+⭐ STRONG ➔ [ 6 ]
+📍 SUPPORT ➔ [ 4, 9 ]
 ━━━━━━━━━━━━━━━━━━━━
 📊 MASTER BOARD 📊
 💠 1 | 14, 19, 16, 11 | 128, 470, 100, 146
@@ -59,10 +59,10 @@ const games = {
 
 ━━━━━━━━━━━━━━━━━━━━
 
-💠 **MILAN NIGHT** 💠
-🏆 FIX ANK ➔ 👑 [ 3 ]
-⭐ STRONG ➔ 🌟 [ 8 ]
-📍 SUPPORT ➔ 🚩 [ 1, 6 ]
+💠 MILAN NIGHT 💠
+🏆 FIX ANK ➔ [ 3 ]
+⭐ STRONG ➔ [ 8 ]
+📍 SUPPORT ➔ [ 1, 6 ]
 ━━━━━━━━━━━━━━━━━━━━
 📊 MASTER BOARD 📊
 💠 3 | 31, 36, 38, 33 | 120, 148, 670, 247
@@ -72,10 +72,10 @@ const games = {
 
 ━━━━━━━━━━━━━━━━━━━━
 
-💠 **MAIN BAZAR** 💠
-🏆 FIX ANK ➔ 👑 [ 0 ]
-⭐ STRONG ➔ 🌟 [ 5 ]
-📍 SUPPORT ➔ 🚩 [ 4, 9 ]
+💠 MAIN BAZAR 💠
+🏆 FIX ANK ➔ [ 0 ]
+⭐ STRONG ➔ [ 5 ]
+📍 SUPPORT ➔ [ 4, 9 ]
 ━━━━━━━━━━━━━━━━━━━━
 📊 MASTER BOARD 📊
 💠 0 | 04, 09, 05, 00 | 127, 460, 550, 280
@@ -84,15 +84,15 @@ const games = {
 💠 9 | 90, 95, 99, 94 | 126, 450, 270, 360
 
 ━━━━━━━━━━━━━━━━━━━━
-⚠️ **विशेष नोट:**
+⚠️ विशेष नोट:
 ● Open Pass होने के बाद Close न खेलें।
 ● Open या Close 100% Pass होगा।
 ━━━━━━━━━━━━━━━━━━━━
-✅ **AGRIMM OFFICIAL**
+✅ AGRIMM OFFICIAL
     `,
 
     "ALL_MARKET_CHART": `
-🏆 **ALL MARKET 4 ANK OTC** 🏆
+🏆 ALL MARKET 4 ANK OTC 🏆
 📅 दिनांक: ${getTodayDate()}
 ━━━━━━━━━━━━━━━━━━━━
 1. SRIDEVI DAY    |  0-5-3-8
@@ -110,8 +110,8 @@ const games = {
 13. RAJDHANI NIGHT|  1-6-0-5
 14. MAIN BAZAR    |  3-8-0-5
 ━━━━━━━━━━━━━━━━━━━━
-🎯 जहाँ पास, वही **STOP** करें!
-✅ **AGRIMM OFFICIAL**
+🎯 जहाँ पास, वही STOP करें!
+✅ AGRIMM OFFICIAL
     `
 };
 
@@ -123,27 +123,24 @@ const mainKB = Markup.inlineKeyboard([
 ]);
 
 bot.start((ctx) => {
-    ctx.reply(`👑 **Welcome Agrimm Official** 👑\n━━━━━━━━━━━━━━━━━━━━\n📅 दिनांक: **${getTodayDate()}**\n👇 आज का धमाका देखने के लिए नीचे बटन दबाएं:`, mainKB);
+    ctx.reply(`👑 Welcome Agrimm Official 👑\n━━━━━━━━━━━━━━━━━━━━\n📅 दिनांक: ${getTodayDate()}\n👇 आज का धमाका देखने के लिए नीचे बटन दबाएं:`, mainKB);
 });
 
 bot.action('HOME', async (ctx) => {
     try { await ctx.deleteMessage(); } catch (e) {}
-    ctx.reply(`👑 **Welcome Agrimm Official** 👑\n👇 गेम देखने के लिए बटन दबाएं:`, mainKB);
+    ctx.reply(`👑 Welcome Agrimm Official 👑\n👇 गेम देखने के लिए बटन दबाएं:`, mainKB);
 });
 
 bot.action('MENU_FIX', (ctx) => {
-    ctx.editMessageText(games.FIX_GAME_LIST, {
-        parse_mode: 'Markdown',
-        ...Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]])
-    }).catch(() => {});
+    ctx.editMessageText(games.FIX_GAME_LIST, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]])).catch(() => {});
 });
 
 bot.action('MENU_CHART', (ctx) => {
-    ctx.editMessageText(games.ALL_MARKET_CHART, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]]));
+    ctx.editMessageText(games.ALL_MARKET_CHART, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]])).catch(() => {});
 });
 
 bot.action('MENU_FOLLOW', (ctx) => {
-    ctx.editMessageText('🎯 **CHOOSE FOLLOW ANK:**', Markup.inlineKeyboard([
+    ctx.editMessageText('🎯 CHOOSE FOLLOW ANK:', Markup.inlineKeyboard([
         [Markup.button.callback('🌞 DAY FOLLOW', 'VIEW_FOLLOW_DAY'), Markup.button.callback('🌙 NIGHT FOLLOW', 'VIEW_FOLLOW_NIGHT')],
         [Markup.button.callback('⬅️ BACK', 'HOME')]
     ]));
@@ -152,7 +149,7 @@ bot.action('MENU_FOLLOW', (ctx) => {
 bot.action('VIEW_FOLLOW_DAY', async (ctx) => {
     try { await ctx.deleteMessage(); } catch (e) {}
     await ctx.sendPhoto(IMG_FOLLOW_DAY, {
-        caption: `🌞 **DAY FOLLOW ANK**`,
+        caption: `🌞 DAY FOLLOW ANK`,
         ...Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'MENU_FOLLOW')]])
     }).catch(() => ctx.reply("सतीश भाई, फोटो लिंक सेट करें।"));
 });
@@ -160,10 +157,9 @@ bot.action('VIEW_FOLLOW_DAY', async (ctx) => {
 bot.action('VIEW_FOLLOW_NIGHT', async (ctx) => {
     try { await ctx.deleteMessage(); } catch (e) {}
     await ctx.sendPhoto(IMG_FOLLOW_NIGHT, {
-        caption: `🌙 **NIGHT FOLLOW ANK**`,
+        caption: `🌙 NIGHT FOLLOW ANK`,
         ...Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'MENU_FOLLOW')]])
     }).catch(() => ctx.reply("सतीश भाई, फोटो लिंक सेट करें।"));
 });
 
 bot.launch();
-
