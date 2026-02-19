@@ -1,3 +1,4 @@
+
 const { Telegraf, Markup } = require('telegraf');
 const express = require('express'); 
 const app = express();
@@ -10,30 +11,30 @@ const bot = new Telegraf(BOT_TOKEN);
 
 const getTodayDate = () => new Date().toLocaleDateString('hi-IN', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
-// --- फोटो लिंक (PostImages.org से डायरेक्ट लिंक यहाँ डालें) ---
+// --- फोटो लिंक यहाँ डालें ---
 const IMG_FOLLOW_DAY = "https://i.postimg.cc/your-link/day.jpg"; 
 const IMG_FOLLOW_NIGHT = "https://i.postimg.cc/your-link/night.jpg";
 
-// कॉमन नोट जो हर मार्केट के नीचे आएगा
+// कॉमन नोट
 const specialNote = `
-━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⚠️ **विशेष नोट:**
 ● Open Pass होने के बाद Close न खेलें।
 ● Open या Close 100% Pass होगा।
-━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✅ **AGRIMM OFFICIAL**`;
 
-// 📊 मार्केट डेटा (नया डिजाइन)
+// 📊 मार्केट डेटा (New Bulletin Design)
 const marketData = {
-    "TIME_BAZAR": `◈ **TIME BAZAR** ◈\n📅 ${getTodayDate()}\n🎯 **मुख्य अंक (OTC):**\n━━━━━━━━━━━━━━\n🟢 FIX: [ 1 ]\n🟡 STRONG: [ 6 ]\n⚪ SUPPORT: [ 4, 9 ]\n━━━━━━━━━━━━━━\n📋 **गेम बोर्ड:**\nअंक | VIP जोड़ी | स्ट्रॉन्ग पन्ना\n➲ 1 | 14, 19, 16, 11 | 128, 470, 100, 146\n➲ 6 | 64, 69, 61, 66 | 123, 150, 600, 240\n➲ 4 | 41, 46, 49, 44 | 130, 158, 400, 220\n➲ 9 | 91, 96, 94, 99 | 126, 450, 270, 360` + specialNote,
+    "TIME_BAZAR": `⚡ **TIME BAZAR** ⚡\n📅 ${getTodayDate()} | THURSDAY\n◢◤ आज का फाइनल बुलेटिन ◢◤\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n◈ FIX ANK ➲ 〖 1 〗\n◈ STRONG ➲ 〖 6 〗\n◈ SUPPORT ➲ 〖 4, 9 〗\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📊 **MASTER DATA BOARD:**\nRANK | OTC | VIP JODI | POWER PANNA\n🥇 TOP | 1 | 14, 19, 16, 11 | 128, 470, 100, 146\n🥈 HIGH | 6 | 64, 69, 61, 66 | 123, 150, 600, 240\n🥉 SAFE | 4 | 41, 46, 49, 44 | 130, 158, 400, 220\n🥉 SAFE | 9 | 91, 96, 94, 99 | 126, 450, 270, 360` + specialNote,
 
-    "MILAN_DAY": `◈ **MILAN DAY** ◈\n📅 ${getTodayDate()}\n🎯 **मुख्य अंक (OTC):**\n━━━━━━━━━━━━━━\n🟢 FIX: [ 4 ]\n🟡 STRONG: [ 9 ]\n⚪ SUPPORT: [ 0, 5 ]\n━━━━━━━━━━━━━━\n📋 **गेम बोर्ड:**\nअंक | VIP जोड़ी | स्ट्रॉन्ग पन्ना\n➲ 4 | 40, 45, 49, 44 | 130, 158, 400, 220\n➲ 9 | 90, 95, 94, 99 | 126, 450, 270, 360\n➲ 0 | 04, 09, 05, 00 | 127, 460, 550, 280\n➲ 5 | 54, 59, 50, 55 | 140, 230, 690, 159` + specialNote,
+    "MILAN_DAY": `⚡ **MILAN DAY** ⚡\n📅 ${getTodayDate()} | THURSDAY\n◢◤ आज का फाइनल बुलेटिन ◢◤\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n◈ FIX ANK ➲ 〖 4 〗\n◈ STRONG ➲ 〖 9 〗\n◈ SUPPORT ➲ 〖 0, 5 〗\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📊 **MASTER DATA BOARD:**\nRANK | OTC | VIP JODI | POWER PANNA\n🥇 TOP | 4 | 40, 45, 49, 44 | 130, 158, 400, 220\n🥈 HIGH | 9 | 90, 95, 94, 99 | 126, 450, 270, 360\n🥉 SAFE | 0 | 04, 09, 05, 00 | 127, 460, 550, 280\n🥉 SAFE | 5 | 54, 59, 50, 55 | 140, 230, 690, 159` + specialNote,
 
-    "KALYAN": `◈ **KALYAN** ◈\n📅 ${getTodayDate()}\n🎯 **मुख्य अंक (OTC):**\n━━━━━━━━━━━━━━\n🟢 FIX: [ 1 ]\n🟡 STRONG: [ 6 ]\n⚪ SUPPORT: [ 4, 9 ]\n━━━━━━━━━━━━━━\n📋 **गेम बोर्ड:**\nअंक | VIP जोड़ी | स्ट्रॉन्ग पन्ना\n➲ 1 | 14, 19, 16, 11 | 128, 470, 100, 146\n➲ 6 | 64, 69, 61, 66 | 123, 150, 600, 240\n➲ 4 | 41, 46, 49, 44 | 130, 158, 400, 220\n➲ 9 | 91, 96, 94, 99 | 126, 450, 270, 360` + specialNote,
+    "KALYAN": `⚡ **KALYAN** ⚡\n📅 ${getTodayDate()} | THURSDAY\n◢◤ आज का फाइनल बुलेटिन ◢◤\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n◈ FIX ANK ➲ 〖 1 〗\n◈ STRONG ➲ 〖 6 〗\n◈ SUPPORT ➲ 〖 4, 9 〗\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📊 **MASTER DATA BOARD:**\nRANK | OTC | VIP JODI | POWER PANNA\n🥇 TOP | 1 | 14, 19, 16, 11 | 128, 470, 100, 146\n🥈 HIGH | 6 | 64, 69, 61, 66 | 123, 150, 600, 240\n🥉 SAFE | 4 | 41, 46, 49, 44 | 130, 158, 400, 220\n🥉 SAFE | 9 | 91, 96, 94, 99 | 126, 450, 270, 360` + specialNote,
 
-    "MILAN_NIGHT": `◈ **MILAN NIGHT** ◈\n📅 ${getTodayDate()}\n🎯 **मुख्य अंक (OTC):**\n━━━━━━━━━━━━━━\n🟢 FIX: [ 3 ]\n🟡 STRONG: [ 8 ]\n⚪ SUPPORT: [ 1, 6 ]\n━━━━━━━━━━━━━━\n📋 **गेम बोर्ड:**\nअंक | VIP जोड़ी | स्ट्रॉन्ग पन्ना\n➲ 3 | 31, 36, 38, 33 | 120, 148, 670, 247\n➲ 8 | 81, 86, 83, 88 | 125, 440, 260, 350\n➲ 1 | 13, 18, 16, 11 | 128, 470, 100, 146\n➲ 6 | 63, 68, 61, 66 | 123, 150, 600, 240` + specialNote,
+    "MILAN_NIGHT": `⚡ **MILAN NIGHT** ⚡\n📅 ${getTodayDate()} | THURSDAY\n◢◤ आज का फाइनल बुलेटिन ◢◤\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n◈ FIX ANK ➲ 〖 3 〗\n◈ STRONG ➲ 〖 8 〗\n◈ SUPPORT ➲ 〖 1, 6 〗\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📊 **MASTER DATA BOARD:**\nRANK | OTC | VIP JODI | POWER PANNA\n🥇 TOP | 3 | 31, 36, 38, 33 | 120, 148, 670, 247\n🥈 HIGH | 8 | 81, 86, 83, 88 | 125, 440, 260, 350\n🥉 SAFE | 1 | 13, 18, 16, 11 | 128, 470, 100, 146\n🥉 SAFE | 6 | 63, 68, 61, 66 | 123, 150, 600, 240` + specialNote,
 
-    "MAIN_BAZAR": `◈ **MAIN BAZAR** ◈\n📅 ${getTodayDate()}\n🎯 **मुख्य अंक (OTC):**\n━━━━━━━━━━━━━━\n🟢 FIX: [ 0 ]\n🟡 STRONG: [ 5 ]\n⚪ SUPPORT: [ 4, 9 ]\n━━━━━━━━━━━━━━\n📋 **गेम बोर्ड:**\nअंक | VIP जोड़ी | स्ट्रॉन्ग पन्ना\n➲ 0 | 04, 09, 05, 00 | 127, 460, 550, 280\n➲ 5 | 54, 59, 50, 55 | 140, 230, 690, 159\n➲ 4 | 40, 45, 44, 49 | 130, 158, 400, 220\n➲ 9 | 90, 95, 99, 94 | 126, 450, 270, 360` + specialNote
+    "MAIN_BAZAR": `⚡ **MAIN BAZAR** ⚡\n📅 ${getTodayDate()} | THURSDAY\n◢◤ आज का फाइनल बुलेटिन ◢◤\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n◈ FIX ANK ➲ 〖 0 〗\n◈ STRONG ➲ 〖 5 〗\n◈ SUPPORT ➲ 〖 4, 9 〗\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📊 **MASTER DATA BOARD:**\nRANK | OTC | VIP JODI | POWER PANNA\n🥇 TOP | 0 | 04, 09, 05, 00 | 127, 460, 550, 280\n🥈 HIGH | 5 | 54, 59, 50, 55 | 140, 230, 690, 159\n🥉 SAFE | 4 | 40, 45, 44, 49 | 130, 158, 400, 220\n🥉 SAFE | 9 | 90, 95, 99, 94 | 126, 450, 270, 360` + specialNote
 };
 
 const mainKB = Markup.inlineKeyboard([
@@ -44,9 +45,9 @@ const mainKB = Markup.inlineKeyboard([
 ]);
 
 const folderKB = Markup.inlineKeyboard([
-    [Markup.button.callback('◈ TIME BAZAR', 'GO_TIME_BAZAR'), Markup.button.callback('◈ MILAN DAY', 'GO_MILAN_DAY')],
-    [Markup.button.callback('◈ KALYAN', 'GO_KALYAN')],
-    [Markup.button.callback('◈ MILAN NIGHT', 'GO_MILAN_NIGHT'), Markup.button.callback('◈ MAIN BAZAR', 'GO_MAIN_BAZAR')],
+    [Markup.button.callback('⚡ TIME BAZAR', 'GO_TIME_BAZAR'), Markup.button.callback('⚡ MILAN DAY', 'GO_MILAN_DAY')],
+    [Markup.button.callback('⚡ KALYAN', 'GO_KALYAN')],
+    [Markup.button.callback('⚡ MILAN NIGHT', 'GO_MILAN_NIGHT'), Markup.button.callback('⚡ MAIN BAZAR', 'GO_MAIN_BAZAR')],
     [Markup.button.callback('⬅️ BACK TO HOME', 'HOME')]
 ]);
 
@@ -59,7 +60,7 @@ bot.action('HOME', async (ctx) => {
 });
 
 bot.action('MENU_FOLDERS', (ctx) => {
-    ctx.editMessageText(`📂 **सभी मार्केट की लिस्ट यहाँ है:**\nदिनांक: ${getTodayDate()}`, folderKB);
+    ctx.editMessageText(`📂 **Select Market Folder:**\n📅 दिनांक: ${getTodayDate()}`, folderKB);
 });
 
 bot.action('GO_TIME_BAZAR', (ctx) => ctx.editMessageText(marketData.TIME_BAZAR, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK TO LIST', 'MENU_FOLDERS')]])));
@@ -91,5 +92,3 @@ bot.action('VIEW_FOLLOW_NIGHT', async (ctx) => {
 });
 
 bot.launch();
-
-
