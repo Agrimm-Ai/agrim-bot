@@ -1,4 +1,3 @@
-
 const { Telegraf, Markup } = require('telegraf');
 const express = require('express'); 
 const app = express();
@@ -32,9 +31,9 @@ const marketData = {
     "CHART": `🏆 **ALL MARKET 6 ANK OTC** 🏆\n📅 ${getTodayDate()}\n━━━━━━━━━━━━━━\n1. SRIDEVI DAY | 0,1,2,4,5,6\n2. TIME BAZAR | 0,8,9,2,3,4\n3. MADHUR DAY | 0,1,2,4,5,6\n4. MILAN DAY | 0,8,9,2,3,4\n5. RAJDHANI DAY | 0,8,9,2,3,4\n6. SUPREME DAY | 0,1,2,4,5,6\n7. KALYAN | 2,3,4,6,7,8\n8. SRIDEVI NIGHT | 0,1,2,6,7,8\n9. MADHUR NIGHT | 4,5,6,8,9,0\n10. SUPREME NIGHT | 7,8,9,1,2,3\n11. MILAN NIGHT | 9,0,1,3,4,5\n12. RAJDHANI NIGHT | 4,5,6,8,9,0\n13. KALYAN NIGHT | 9,0,1,3,4,5\n14. MAIN BAZAR | 9,0,1,3,4,5\n━━━━━━━━━━━━━━\n✅ **AGRIMM OFFICIAL**`
 };
 
-// ⌨️ कीबोर्ड (Keyboards)
 const menuTxt = `👑 **Welcome Agrimm Official** 👑\n👇 आज का धमाका देखने के लिए नीचे बटन दबाएं:`;
 
+// --- Keyboards ---
 const mainKB = Markup.inlineKeyboard([
     [Markup.button.callback('🔥 TODAY VIP GAME 1 🔥', 'FOLDERS_1')],
     [Markup.button.callback('💎 TODAY VIP GAME 2 💎', 'FOLDERS_2')],
@@ -54,37 +53,28 @@ const folder2KB = Markup.inlineKeyboard([
     [Markup.button.callback('⬅️ BACK TO HOME', 'HOME')]
 ]);
 
-// 🤖 एक्शन्स (Handlers)
+// --- Handlers ---
 bot.start((ctx) => ctx.reply(menuTxt, mainKB));
 
-// Home Action
-bot.action('HOME', async (ctx) => {
-    try { await ctx.editMessageText(menuTxt, mainKB); } catch (e) {}
+// Important: Button response signal
+bot.on('callback_query', async (ctx, next) => {
+    try { await ctx.answerCbQuery(); } catch (e) {}
+    return next();
 });
 
-// Folders Navigation
-bot.action('FOLDERS_1', async (ctx) => {
-    try { await ctx.editMessageText(`📂 **VIP GAME FOLDER 1:**`, folder1KB); } catch (e) {}
-});
+bot.action('HOME', (ctx) => ctx.editMessageText(menuTxt, mainKB).catch(()=>{}));
+bot.action('FOLDERS_1', (ctx) => ctx.editMessageText(`📂 **VIP GAME FOLDER 1:**`, folder1KB).catch(()=>{}));
+bot.action('FOLDERS_2', (ctx) => ctx.editMessageText(`📂 **VIP GAME FOLDER 2:**`, folder2KB).catch(()=>{}));
 
-bot.action('FOLDERS_2', async (ctx) => {
-    try { await ctx.editMessageText(`📂 **VIP GAME FOLDER 2:**`, folder2KB); } catch (e) {}
-});
-
-// VIP 1 Market Handlers (Proper Back to Folder 1)
 bot.action('G1_TIME', (ctx) => ctx.editMessageText(marketData.TIME, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])).catch(()=>{}));
 bot.action('G1_MILAN', (ctx) => ctx.editMessageText(marketData.MILAN, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])).catch(()=>{}));
 bot.action('G1_KALYAN', (ctx) => ctx.editMessageText(marketData.KALYAN1, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])).catch(()=>{}));
 bot.action('G1_RAJ', (ctx) => ctx.editMessageText(marketData.RAJ, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])).catch(()=>{}));
 bot.action('G1_MAIN', (ctx) => ctx.editMessageText(marketData.MAIN1, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])).catch(()=>{}));
 
-// VIP 2 Market Handlers (Proper Back to Folder 2)
 bot.action('G2_KALYAN', (ctx) => ctx.editMessageText(marketData.KALYAN2, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_2')]])).catch(()=>{}));
 bot.action('G2_MAIN', (ctx) => ctx.editMessageText(marketData.MAIN2, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_2')]])).catch(()=>{}));
 
-// Master Chart Action
-bot.action('MENU_CHART', async (ctx) => {
-    try { await ctx.editMessageText(marketData.CHART, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]])); } catch (e) {}
-});
+bot.action('MENU_CHART', (ctx) => ctx.editMessageText(marketData.CHART, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]])).catch(()=>{}));
 
 bot.launch();
