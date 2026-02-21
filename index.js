@@ -14,18 +14,16 @@ const getTodayDay = () => "शनिवार";
 
 const specialNote = `\n━━━━━━━━━━━━━━\n⚠️ **विशेष नोट:**\n● Open Pass होने के बाद Close न खेलें।\n● Open या Close 100% Pass होगा।\n━━━━━━━━━━━━━━\n✅ **AGRIMM OFFICIAL**`;
 
-// 📊 आज का पूरा मार्केट डेटा
+// 📊 मार्केट डेटा (सिर्फ आज का फ्रेश गेम)
 const marketData = {
-    // 1. श्रीदेवी डे
     "SRIDEVI": `✥ **SRIDEVI DAY** ✥\n${getTodayDay()} धमाका | ${getTodayDate()}\n━━━━━━━━━━━━━━━━━━\n💪 **STRONG ANK:** 3 — 8\n━━━━━━━━━━━━━━━━━━\n🔥 **FIX OTC:** 3 — 8 — 0 — 5\n(3 और 8 ओपन के लिए महा-स्ट्रांग हैं)\n━━━━━━━━━━━━━━━━━━\n🎯 **SINGLE JODI:** [[ 30 ]]\n━━━━━━━━━━━━━━━━━━\n💎 **SUPPORT JODI:**\n85 — 35 — 80 — 03\n━━━━━━━━━━━━━━━━━━\n🎰 **POWER PANNA:**\n120 — 468 — 157 — 378\n━━━━━━━━━━━━━━━━━━\n🚩 **BY: AGRIMM**\n━━━━━━━━━━━━━━━━━━` + specialNote,
 
-    // 2. टाइम बाज़ार (Elite Look)
     "TIME": `🏛️ **TIME BAZAR : ELITE LOOK** 🏛️\n📅 ${getTodayDate()} (${getTodayDay()})\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⭐ **PRIMARY FIX** ➔ [[ 4 ]]\n🔥 **SECONDARY STRONG** ➔ [[ 9 ]]\n🛡️ **DEFENSE SUPPORT** ➔ [[ 0, 5 ]]\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 **VIP जोड़ी सेट | स्ट्रॉन्ग पन्ना**\n\n💎 **अंक 4:** 40, 45, 49, 44 | 130, 158, 400, 220\n💎 **अंक 9:** 90, 95, 94, 99 | 126, 450, 270, 360\n💎 **अंक 0:** 04, 09, 05, 00 | 127, 460, 550, 280\n💎 **अंक 5:** 54, 59, 50, 55 | 140, 230, 690, 159\n━━━━━━━━━━━━━━━━━━━━━━━━━━` + specialNote,
 
-    // 3. कल्याण शनिवार स्पेशल
+    "MILAN_DAY": `✥ **MILAN DAY** ✥\n${getTodayDay()} धमाका | ${getTodayDate()}\n━━━━━━━━━━━━━━━━━━\n💪 **STRONG ANK:** 0 — 5\n━━━━━━━━━━━━━━━━━━\n🔥 **FIX OTC:** 0 — 5 — 3 — 8\n(0 और 5 ओपन के लिए महा-स्ट्रांग हैं)\n━━━━━━━━━━━━━━━━━━\n🎯 **SINGLE JODI:** [[ 03 ]]\n━━━━━━━━━━━━━━━━━━\n💎 **SUPPORT JODI:**\n58 — 08 — 53 — 35\n━━━━━━━━━━━━━━━━━━\n🎰 **POWER PANNA:**\n127 — 235 — 145 — 460\n━━━━━━━━━━━━━━━━━━\n🚩 **BY: AGRIMM**\n━━━━━━━━━━━━━━━━━━` + specialNote,
+
     "KALYAN_SAT": `🏛️ **KALYAN : SATURDAY SPECIAL** 🏛️\n📅 ${getTodayDate()} (${getTodayDay()})\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⭐ **PRIMARY FIX** ➔ [[ 3 ]]\n🔥 **SECONDARY STRONG** ➔ [[ 8 ]]\n🛡️ **DEFENSE SUPPORT** ➔ [[ 1, 6 ]]\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 **VIP जोड़ी सेट | स्ट्रॉन्ग पन्ना**\n\n💎 **अंक 3:** 31, 36, 38, 33 | 120, 148, 670, 247\n💎 **अंक 8:** 81, 86, 83, 88 | 125, 440, 260, 350\n💎 **अंक 1:** 13, 18, 16, 11 | 128, 470, 100, 146\n💎 **अंक 6:** 63, 68, 61, 66 | 123, 150, 600, 240\n━━━━━━━━━━━━━━━━━━━━━━━━━━` + specialNote,
 
-    // 4. एग्रिम स्पेशल 6-अंक चार्ट
     "CHART": `✨ **𝐀𝐆𝐑𝐈𝐌𝐌 𝐒𝐏𝐄𝐂𝐈𝐀𝐋 𝐆𝐀𝐌𝐄** ✨\n📅 दिनांक: ${getTodayDate()} (${getTodayDay()})\n━━━━━━━━━━━━━━━━━━\n⭐ **[ डे मार्केट - 6 ANK OTC ]** ⭐\n➥ SRIDEVI DAY » 【1-2-3-5-6-7】\n➥ TIME BAZAR » 【0-8-9-2-3-4】\n➥ MADHUR DAY » 【7-8-9-1-2-3】\n➥ MILAN DAY » 【0-8-9-2-3-4】\n➥ RAJDHANI DAY » 【5-6-7-9-0-1】\n➥ SUPREME DAY » 【5-6-7-9-0-1】\n➥ KALYAN » 【4-5-6-8-9-0】🔥\n\n🌑 **[ नाइट मार्केट - 6 ANK OTC ]** 🌑\n➥ SRIDEVI NIGHT » 【4-5-6-8-9-0】\n➥ MADHUR NIGHT » 【1-2-3-5-6-7】\n➥ SUPREME NIGHT » 【0-1-2-4-5-6】\n➥ MILAN NIGHT » 【9-0-1-3-4-5】\n➥ RAJDHANI NIGHT» 【8-9-0-2-3-4】\n➥ KALYAN NIGHT » 【0-1-2-4-5-6】\n➥ MAIN BAZAR » 【3-4-5-7-8-9】🔥\n━━━━━━━━━━━━━━━━━━\n💰 ओपन टू क्लोज - कभी फेल नहीं 💰\n✅ सफलता का दूसरा नाम: **AGRIMM**`
 };
 
@@ -39,7 +37,7 @@ const mainKB = Markup.inlineKeyboard([
 
 const folder1KB = Markup.inlineKeyboard([
     [Markup.button.callback('⚡ SRIDEVI DAY', 'G1_SRIDEVI')],
-    [Markup.button.callback('⚡ TIME BAZAR', 'G1_TIME')],
+    [Markup.button.callback('⚡ TIME BAZAR', 'G1_TIME'), Markup.button.callback('⚡ MILAN DAY', 'G1_MILAN')],
     [Markup.button.callback('⬅️ BACK TO HOME', 'HOME')]
 ]);
 
@@ -65,6 +63,7 @@ bot.action('FOLDERS_2', (ctx) => safeUpdate(ctx, `📂 **VIP GAME FOLDER 2:**`, 
 
 bot.action('G1_SRIDEVI', (ctx) => safeUpdate(ctx, marketData.SRIDEVI, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
 bot.action('G1_TIME', (ctx) => safeUpdate(ctx, marketData.TIME, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
+bot.action('G1_MILAN', (ctx) => safeUpdate(ctx, marketData.MILAN_DAY, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
 bot.action('G2_KALYAN', (ctx) => safeUpdate(ctx, marketData.KALYAN_SAT, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_2')]])));
 bot.action('MENU_CHART', (ctx) => safeUpdate(ctx, marketData.CHART, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]])));
 
