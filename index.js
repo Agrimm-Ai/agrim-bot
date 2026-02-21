@@ -2,7 +2,7 @@ const { Telegraf, Markup } = require('telegraf');
 const express = require('express'); 
 const app = express();
 
-app.get('/', (req, res) => res.send('Agrimm Official Bot is Live!'));
+app.get('/', (req, res) => res.send('Agrimm Official Bot is Running!'));
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
@@ -14,20 +14,20 @@ const getTodayDay = () => "शनिवार";
 
 const specialNote = `\n━━━━━━━━━━━━━━\n⚠️ **विशेष नोट:**\n● Open Pass होने के बाद Close न खेलें।\n● Open या Close 100% Pass होगा।\n━━━━━━━━━━━━━━\n✅ **AGRIMM OFFICIAL**`;
 
-// 📊 मार्केट डेटा (सिर्फ आज का फ्रेश गेम)
+// 📊 मार्केट डेटा
 const marketData = {
-    "SRIDEVI": `✥ **SRIDEVI DAY** ✥\n${getTodayDay()} धमाका | ${getTodayDate()}\n━━━━━━━━━━━━━━━━━━\n💪 **STRONG ANK:** 3 — 8\n━━━━━━━━━━━━━━━━━━\n🔥 **FIX OTC:** 3 — 8 — 0 — 5\n(3 और 8 ओपन के लिए महा-स्ट्रांग हैं)\n━━━━━━━━━━━━━━━━━━\n🎯 **SINGLE JODI:** [[ 30 ]]\n━━━━━━━━━━━━━━━━━━\n💎 **SUPPORT JODI:**\n85 — 35 — 80 — 03\n━━━━━━━━━━━━━━━━━━\n🎰 **POWER PANNA:**\n120 — 468 — 157 — 378\n━━━━━━━━━━━━━━━━━━\n🚩 **BY: AGRIMM**\n━━━━━━━━━━━━━━━━━━` + specialNote,
+    "SRIDEVI": `✥ **SRIDEVI DAY** ✥\n${getTodayDay()} धमाका | ${getTodayDate()}\n━━━━━━━━━━━━━━━━━━\n💪 **STRONG ANK:** 3 — 8\n━━━━━━━━━━━━━━━━━━\n🔥 **FIX OTC:** 3 — 8 — 0 — 5\n━━━━━━━━━━━━━━━━━━\n🎯 **SINGLE JODI:** [[ 30 ]]\n━━━━━━━━━━━━━━━━━━\n🎰 **POWER PANNA:** 120 — 468 — 157 — 378\n━━━━━━━━━━━━━━━━━━` + specialNote,
 
-    "TIME": `🏛️ **TIME BAZAR : ELITE LOOK** 🏛️\n📅 ${getTodayDate()} (${getTodayDay()})\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⭐ **PRIMARY FIX** ➔ [[ 4 ]]\n🔥 **SECONDARY STRONG** ➔ [[ 9 ]]\n🛡️ **DEFENSE SUPPORT** ➔ [[ 0, 5 ]]\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 **VIP जोड़ी सेट | स्ट्रॉन्ग पन्ना**\n\n💎 **अंक 4:** 40, 45, 49, 44 | 130, 158, 400, 220\n💎 **अंक 9:** 90, 95, 94, 99 | 126, 450, 270, 360\n💎 **अंक 0:** 04, 09, 05, 00 | 127, 460, 550, 280\n💎 **अंक 5:** 54, 59, 50, 55 | 140, 230, 690, 159\n━━━━━━━━━━━━━━━━━━━━━━━━━━` + specialNote,
+    "TIME": `🏛️ **TIME BAZAR : ELITE LOOK** 🏛️\n📅 ${getTodayDate()} (${getTodayDay()})\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⭐ **PRIMARY FIX** ➔ [[ 4 ]]\n🔥 **SECONDARY STRONG** ➔ [[ 9 ]]\n🛡️ **DEFENSE SUPPORT** ➔ [[ 0, 5 ]]\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n💎 अंक 4: 40, 45, 49, 44 | 130, 158, 400, 220\n💎 अंक 9: 90, 95, 94, 99 | 126, 450, 270, 360\n━━━━━━━━━━━━━━━━━━━━━━━━━━` + specialNote,
 
-    "MILAN_DAY": `✥ **MILAN DAY** ✥\n${getTodayDay()} धमाका | ${getTodayDate()}\n━━━━━━━━━━━━━━━━━━\n💪 **STRONG ANK:** 0 — 5\n━━━━━━━━━━━━━━━━━━\n🔥 **FIX OTC:** 0 — 5 — 3 — 8\n(0 और 5 ओपन के लिए महा-स्ट्रांग हैं)\n━━━━━━━━━━━━━━━━━━\n🎯 **SINGLE JODI:** [[ 03 ]]\n━━━━━━━━━━━━━━━━━━\n💎 **SUPPORT JODI:**\n58 — 08 — 53 — 35\n━━━━━━━━━━━━━━━━━━\n🎰 **POWER PANNA:**\n127 — 235 — 145 — 460\n━━━━━━━━━━━━━━━━━━\n🚩 **BY: AGRIMM**\n━━━━━━━━━━━━━━━━━━` + specialNote,
+    "MILAN_DAY": `✥ **MILAN DAY** ✥\n${getTodayDay()} धमाका | ${getTodayDate()}\n━━━━━━━━━━━━━━━━━━\n💪 **STRONG ANK:** 0 — 5\n━━━━━━━━━━━━━━━━━━\n🔥 **FIX OTC:** 0 — 5 — 3 — 8\n━━━━━━━━━━━━━━━━━━\n🎯 **SINGLE JODI:** [[ 03 ]]\n━━━━━━━━━━━━━━━━━━\n🎰 **POWER PANNA:** 127 — 235 — 145 — 460\n━━━━━━━━━━━━━━━━━━` + specialNote,
 
-    "KALYAN_SAT": `🏛️ **KALYAN : SATURDAY SPECIAL** 🏛️\n📅 ${getTodayDate()} (${getTodayDay()})\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⭐ **PRIMARY FIX** ➔ [[ 3 ]]\n🔥 **SECONDARY STRONG** ➔ [[ 8 ]]\n🛡️ **DEFENSE SUPPORT** ➔ [[ 1, 6 ]]\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 **VIP जोड़ी सेट | स्ट्रॉन्ग पन्ना**\n\n💎 **अंक 3:** 31, 36, 38, 33 | 120, 148, 670, 247\n💎 **अंक 8:** 81, 86, 83, 88 | 125, 440, 260, 350\n💎 **अंक 1:** 13, 18, 16, 11 | 128, 470, 100, 146\n💎 **अंक 6:** 63, 68, 61, 66 | 123, 150, 600, 240\n━━━━━━━━━━━━━━━━━━━━━━━━━━` + specialNote,
+    "KALYAN_SAT": `🏛️ **KALYAN : SATURDAY SPECIAL** 🏛️\n📅 ${getTodayDate()} (${getTodayDay()})\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⭐ **PRIMARY FIX** ➔ [[ 3 ]]\n🔥 **SECONDARY STRONG** ➔ [[ 8 ]]\n🛡️ **DEFENSE SUPPORT** ➔ [[ 1, 6 ]]\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n💎 अंक 3: 31, 36, 38, 33 | 120, 148, 670, 247\n💎 अंक 8: 81, 86, 83, 88 | 125, 440, 260, 350\n━━━━━━━━━━━━━━━━━━━━━━━━━━` + specialNote,
 
-    "CHART": `✨ **𝐀𝐆𝐑𝐈𝐌𝐌 𝐒𝐏𝐄𝐂𝐈𝐀𝐋 𝐆𝐀𝐌𝐄** ✨\n📅 दिनांक: ${getTodayDate()} (${getTodayDay()})\n━━━━━━━━━━━━━━━━━━\n⭐ **[ डे मार्केट - 6 ANK OTC ]** ⭐\n➥ SRIDEVI DAY » 【1-2-3-5-6-7】\n➥ TIME BAZAR » 【0-8-9-2-3-4】\n➥ MADHUR DAY » 【7-8-9-1-2-3】\n➥ MILAN DAY » 【0-8-9-2-3-4】\n➥ RAJDHANI DAY » 【5-6-7-9-0-1】\n➥ SUPREME DAY » 【5-6-7-9-0-1】\n➥ KALYAN » 【4-5-6-8-9-0】🔥\n\n🌑 **[ नाइट मार्केट - 6 ANK OTC ]** 🌑\n➥ SRIDEVI NIGHT » 【4-5-6-8-9-0】\n➥ MADHUR NIGHT » 【1-2-3-5-6-7】\n➥ SUPREME NIGHT » 【0-1-2-4-5-6】\n➥ MILAN NIGHT » 【9-0-1-3-4-5】\n➥ RAJDHANI NIGHT» 【8-9-0-2-3-4】\n➥ KALYAN NIGHT » 【0-1-2-4-5-6】\n➥ MAIN BAZAR » 【3-4-5-7-8-9】🔥\n━━━━━━━━━━━━━━━━━━\n💰 ओपन टू क्लोज - कभी फेल नहीं 💰\n✅ सफलता का दूसरा नाम: **AGRIMM**`
+    "CHART": `✨ **𝐀𝐆𝐑𝐈𝐌𝐌 𝐒𝐏𝐄𝐂𝐈𝐀𝐋 𝐆𝐀𝐌𝐄** ✨\n📅 ${getTodayDate()}\n━━━━━━━━━━━━━━━━━━\n⭐ **[ डे मार्केट - 6 ANK OTC ]** ⭐\n➥ SRIDEVI DAY » 【1-2-3-5-6-7】\n➥ TIME BAZAR » 【0-8-9-2-3-4】\n➥ MADHUR DAY » 【7-8-9-1-2-3】\n➥ MILAN DAY » 【0-8-9-2-3-4】\n➥ RAJDHANI DAY » 【5-6-7-9-0-1】\n➥ SUPREME DAY » 【5-6-7-9-0-1】\n➥ KALYAN » 【4-5-6-8-9-0】🔥\n\n🌑 **[ नाइट मार्केट - 6 ANK OTC ]** 🌑\n➥ SRIDEVI NIGHT » 【4-5-6-8-9-0】\n➥ MADHUR NIGHT » 【1-2-3-5-6-7】\n➥ SUPREME NIGHT » 【0-1-2-4-5-6】\n➥ MILAN NIGHT » 【9-0-1-3-4-5】\n➥ RAJDHANI NIGHT» 【8-9-0-2-3-4】\n➥ KALYAN NIGHT » 【0-1-2-4-5-6】\n➥ MAIN BAZAR » 【3-4-5-7-8-9】🔥\n━━━━━━━━━━━━━━━━━━\n✅ सफलता का दूसरा नाम: **AGRIMM**`
 };
 
-// --- कीबोर्ड ---
+// --- कीबोर्ड्स ---
 const mainKB = Markup.inlineKeyboard([
     [Markup.button.callback('🔥 TODAY VIP GAME 1 🔥', 'FOLDERS_1')],
     [Markup.button.callback('💎 TODAY VIP GAME 2 💎', 'FOLDERS_2')],
@@ -46,26 +46,31 @@ const folder2KB = Markup.inlineKeyboard([
     [Markup.button.callback('⬅️ BACK TO HOME', 'HOME')]
 ]);
 
-// --- हेल्पर फंक्शन ---
-const safeUpdate = async (ctx, text, keyboard) => {
+// --- "Delete & Send" हेल्पर (यह कभी नहीं अटकेगा) ---
+const refreshMenu = async (ctx, text, keyboard) => {
     try {
         await ctx.answerCbQuery().catch(() => {});
-        await ctx.editMessageText(text, { parse_mode: 'Markdown', ...keyboard });
-    } catch (e) { await ctx.reply(text, keyboard); }
+        await ctx.deleteMessage().catch(() => {});
+        await ctx.reply(text, keyboard);
+    } catch (e) {
+        await ctx.reply(text, keyboard);
+    }
 };
 
 // --- हैंडल्स ---
-bot.start((ctx) => ctx.reply(`👑 **Welcome Agrimm Official** 👑\n📅 दिनांक: ${getTodayDate()}\n👇 आज का धमाका देखने के लिए नीचे बटन दबाएं:`, mainKB));
+bot.start((ctx) => ctx.reply(`👑 **Welcome Agrimm Official** 👑\n👇 आज का धमाका देखने के लिए नीचे बटन दबाएं:`, mainKB));
 
-bot.action('HOME', (ctx) => safeUpdate(ctx, `👑 **Welcome Agrimm Official** 👑\n👇 विकल्प चुनें:`, mainKB));
-bot.action('FOLDERS_1', (ctx) => safeUpdate(ctx, `📂 **VIP GAME FOLDER 1:**`, folder1KB));
-bot.action('FOLDERS_2', (ctx) => safeUpdate(ctx, `📂 **VIP GAME FOLDER 2:**`, folder2KB));
+bot.action('HOME', (ctx) => refreshMenu(ctx, `👑 **Welcome Agrimm Official** 👑\n👇 विकल्प चुनें:`, mainKB));
+bot.action('FOLDERS_1', (ctx) => refreshMenu(ctx, `📂 **VIP GAME FOLDER 1:**`, folder1KB));
+bot.action('FOLDERS_2', (ctx) => refreshMenu(ctx, `📂 **VIP GAME FOLDER 2:**`, folder2KB));
 
-bot.action('G1_SRIDEVI', (ctx) => safeUpdate(ctx, marketData.SRIDEVI, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
-bot.action('G1_TIME', (ctx) => safeUpdate(ctx, marketData.TIME, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
-bot.action('G1_MILAN', (ctx) => safeUpdate(ctx, marketData.MILAN_DAY, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
-bot.action('G2_KALYAN', (ctx) => safeUpdate(ctx, marketData.KALYAN_SAT, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_2')]])));
-bot.action('MENU_CHART', (ctx) => safeUpdate(ctx, marketData.CHART, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]])));
+// मार्केट एक्शन्स
+bot.action('G1_SRIDEVI', (ctx) => refreshMenu(ctx, marketData.SRIDEVI, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
+bot.action('G1_TIME', (ctx) => refreshMenu(ctx, marketData.TIME, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
+bot.action('G1_MILAN', (ctx) => refreshMenu(ctx, marketData.MILAN_DAY, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_1')]])));
+bot.action('G2_KALYAN', (ctx) => refreshMenu(ctx, marketData.KALYAN_SAT, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'FOLDERS_2')]])));
+bot.action('MENU_CHART', (ctx) => refreshMenu(ctx, marketData.CHART, Markup.inlineKeyboard([[Markup.button.callback('⬅️ BACK', 'HOME')]])));
 
 bot.launch({ dropPendingUpdates: true });
+
 
